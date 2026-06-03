@@ -1,0 +1,469 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: Be_Task
+meta:
+  id: wrk_8fdfa6d4d52e41d481711361d3f31677
+  created: 1780158121401
+  modified: 1780158121401
+  description: ""
+collection:
+  - url: http://localhost:3000/api/auth/register
+    name: Register
+    meta:
+      id: req_814059978fa943048793909cb6a786d7
+      created: 1780158283573
+      modified: 1780297422849
+      isPrivate: false
+      description: ""
+      sortKey: -1780158283573
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "name": "ihsan",
+          "email": "ihsan@gmail.com",
+          "password": "ihsan123456",
+          "role": "user"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.5.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/api/auth/login
+    name: Login
+    meta:
+      id: req_622bcba446d64d02befbefefb622dcea
+      created: 1780171953119
+      modified: 1780391630858
+      isPrivate: false
+      description: ""
+      sortKey: -1780171953119
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "email": "daffa@gmail.com",
+          "password": "user123456"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.5.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - name: Task
+    meta:
+      id: fld_9529190bb74544718038d0b8f0992c4e
+      created: 1780176091603
+      modified: 1780176091603
+      sortKey: -1780176091603
+      description: ""
+    children:
+      - url: http://localhost:3000/api/tasks
+        name: Create task
+        meta:
+          id: req_0548735170d5468096f0a5e8270f8a99
+          created: 1780176094435
+          modified: 1780228506552
+          isPrivate: false
+          description: ""
+          sortKey: -1780176094435
+        method: POST
+        body:
+          mimeType: multipart/form-data
+          params:
+            - name: userId
+              value: "2"
+              description: ""
+              disabled: false
+            - name: title
+              value: Membuat fitur Auth
+              description: ""
+              disabled: false
+            - name: description
+              value: tugas ini harus di selesaikan dalam waktu 1 minggu
+              description: ""
+              disabled: false
+            - name: project
+              value: aplikasi uji kelayakan
+              description: ""
+              disabled: false
+            - name: time
+              value: 2 jam
+              description: ""
+              disabled: false
+            - name: date
+              value: 2026-05-31
+              description: ""
+              disabled: false
+            - name: image
+              value: ""
+              description: ""
+              disabled: false
+              fileName: /Users/user/Documents/screen shot/Screen Shot 2026-05-31 at
+                04.53.46.png
+              type: file
+        headers:
+          - name: Content-Type
+            value: multipart/form-data
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+          - name: Authorization
+            value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJkYWZmYUBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTc4MDIyODQ3MiwiZXhwIjoxNzgwMzE0ODcyfQ.kxFooS3yzCASkrG3P_9U88ZAOnHa8T6OtWeLcMPh23k
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3ODAxNzYxMTYsImV4cCI6MTc4MDI2MjUxNn0.vLphRe0p3tDf6vxQBkNdAL7AJHfDc-Rd_HREFUWWGjw
+          prefix: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3ODAxNzYxMTYsImV4cCI6MTc4MDI2MjUxNn0.vLphRe0p3tDf6vxQBkNdAL7AJHfDc-Rd_HREFUWWGjw
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/api/tasks
+        name: Get task
+        meta:
+          id: req_ac2b78cd84bd408ba112b43050677c3a
+          created: 1780202216309
+          modified: 1780232532833
+          isPrivate: false
+          description: ""
+          sortKey: -1780202216309
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+          - name: Authorization
+            value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJkdXRhQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzgwMjMyNTIzLCJleHAiOjE3ODAzMTg5MjN9.JXqRRfbTH5WlP591FLejeqX5P_g7jk4ZJNLw5ww__pg
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/api/tasks/4/status
+        name: Update task
+        meta:
+          id: req_81293987a9874e17997f5f877fd6ffcb
+          created: 1780223403959
+          modified: 1780228939599
+          isPrivate: false
+          description: ""
+          sortKey: -1780223403959
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "status": "Done"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+          - name: Authorization
+            value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJkYWZmYUBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTc4MDIyODQ3MiwiZXhwIjoxNzgwMzE0ODcyfQ.kxFooS3yzCASkrG3P_9U88ZAOnHa8T6OtWeLcMPh23k
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/api/tasks/3
+        name: Delete task
+        meta:
+          id: req_7c634eb9411449cba8324484394eacad
+          created: 1780225587236
+          modified: 1780225677829
+          isPrivate: false
+          description: ""
+          sortKey: -1780225587236
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+          - name: Authorization
+            value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJkYWZmYUBnbWFpbC5jb20iLCJpYXQiOjE3ODAyMjQ1MjQsImV4cCI6MTc4MDMxMDkyNH0.A9F4kXwrlf9IpJ6R2iDhpJLklX8cFEFg-rXDcvbK32k
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Manage User
+    meta:
+      id: fld_6a21365b88284015920f97d80b6bb5be
+      created: 1780225963940
+      modified: 1780225963940
+      sortKey: -1780225963940
+      description: ""
+    children:
+      - url: http://localhost:3000/api/tasks/logs
+        name: Get history user
+        meta:
+          id: req_d2cf32d68feb4ffcb5d66047ecddbcd8
+          created: 1780226008126
+          modified: 1780232647009
+          isPrivate: false
+          description: ""
+          sortKey: -1780226008126
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+          - name: Authorization
+            value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3ODAyMzI2MzUsImV4cCI6MTc4MDMxOTAzNX0.ip3QZ1aG0_Is8PeSJYwJw-E6hIn97ixsjDUz4BAgmN8
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/api/users/2
+        name: Get detail user
+        meta:
+          id: req_e7c5c44284c74b75b58d560df77ba57b
+          created: 1780229276241
+          modified: 1780229497833
+          isPrivate: false
+          description: ""
+          sortKey: -1780229276241
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+          - name: Authorization
+            value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3ODAyMjg2MDEsImV4cCI6MTc4MDMxNTAwMX0.IQAFbntmdrv-FQgpWhWNHkUwFHQ87CT1F1gsSQ87WqA
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Invite task
+    meta:
+      id: fld_f1ca6b1bdd4c47d6b5516cd16fcd3ba2
+      created: 1780231467630
+      modified: 1780231467630
+      sortKey: -1780231467630
+      description: ""
+    children:
+      - url: http://localhost:3000/api/tasks/4/invite
+        name: Invite member
+        meta:
+          id: req_4a9e223402e04b429a35adbc0e1e84ad
+          created: 1780231470716
+          modified: 1780297464563
+          isPrivate: false
+          description: ""
+          sortKey: -1780231470716
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "userIdToInvite": 5
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+          - name: Authorization
+            value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJkYWZmYUBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTc4MDI5NzQ1MSwiZXhwIjoxNzgwMzgzODUxfQ.NtUXq3Quajw29sEVYlyCrethKY-62eLoDfNrJIs6Gxg
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Notification
+    meta:
+      id: fld_d892bb8125c341fe90537adfee259686
+      created: 1780297522062
+      modified: 1780297522062
+      sortKey: -1780297522062
+      description: ""
+    children:
+      - url: http://localhost:3000/api/notifications
+        name: Get notif
+        meta:
+          id: req_5251fb0b92444680a4a4af74ff654c93
+          created: 1780297525119
+          modified: 1780297565092
+          isPrivate: false
+          description: ""
+          sortKey: -1780297525119
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+          - name: Authorization
+            value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiZW1haWwiOiJpaHNhbkBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTc4MDI5NzUwNSwiZXhwIjoxNzgwMzgzOTA1fQ.7Yl1kaTaCGXhK5Ps2iCAgnXe4ex4YultPb8Xn87dL1U
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/api/notifications/1/read
+        name: Update notif
+        meta:
+          id: req_5bdaba0efb634571bb3579ea3b9d2510
+          created: 1780297603094
+          modified: 1780297988628
+          isPrivate: false
+          description: ""
+          sortKey: -1780297603094
+        method: PUT
+        headers:
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+          - name: Authorization
+            value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiZW1haWwiOiJpaHNhbkBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTc4MDI5NzUwNSwiZXhwIjoxNzgwMzgzOTA1fQ.7Yl1kaTaCGXhK5Ps2iCAgnXe4ex4YultPb8Xn87dL1U
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Profile
+    meta:
+      id: fld_65508948715447f7974c1c18667ecd21
+      created: 1780298590884
+      modified: 1780298590884
+      sortKey: -1780298590884
+      description: ""
+    children:
+      - url: http://localhost:3000/api/users/profile
+        name: Create profile
+        meta:
+          id: req_72fed84338864bd79d25d808469e4c8f
+          created: 1780298593557
+          modified: 1780299639344
+          isPrivate: false
+          description: ""
+          sortKey: -1780298593557
+        method: PUT
+        body:
+          mimeType: multipart/form-data
+          params:
+            - name: name
+              value: Daffa Hibban
+              description: ""
+              disabled: false
+            - name: profile_picture
+              value: ""
+              description: ""
+              disabled: false
+              fileName: /Users/user/Downloads/ChatGPT_Image_May_25__2026__02_51_53_PM-removebg-preview.png
+              type: file
+        headers:
+          - name: Content-Type
+            value: multipart/form-data
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+          - name: Authorization
+            value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJkYWZmYUBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTc4MDI5OTIxNSwiZXhwIjoxNzgwMzg1NjE1fQ.hVf-dWiNz_4aYWQgZqVhnTtYmr6NuMX7rZJS0nyuKaM
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_e82552a5d2ff58d4e496cfac58818e8af215cbb6
+    created: 1780158121454
+    modified: 1780158121454
+environments:
+  name: Base Environment
+  meta:
+    id: env_e82552a5d2ff58d4e496cfac58818e8af215cbb6
+    created: 1780158121445
+    modified: 1780158121445
+    isPrivate: false
